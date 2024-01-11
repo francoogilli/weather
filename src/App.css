@@ -1,9 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-body{
-    background-color: #312A5B;
+body {
+    background-color: #1F1D47;
     font-family: 'Inter', sans-serif;
+    position: relative;
+    margin: 0;
+    padding: 0;
 }
 
-
-  
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(73.19% 111.55% at 93.07% 74.31%, rgba(76, 32, 177, 0.9) 0%, rgba(46, 51, 90, 0.90) 100%);
+    z-index: -1; /* Coloca la capa antes que el contenido principal */
+}
