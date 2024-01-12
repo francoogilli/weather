@@ -1,6 +1,8 @@
 import React from "react";
 import SectionContainer from "./SectionContainer";
 import cloud from "../assets/cloud.png";
+import rayo from "../assets/rayo.png";
+
 
 const Hours={
     zero:{
@@ -136,15 +138,17 @@ const Forecast = () => {
                   minWidth: "74px", // Puedes ajustar este valor según tus necesidades
                   flex: "0 0 auto", // Esto evita que los elementos se contraigan
                   border: "1px solid rgba(255, 255, 255, 0.20)",
-                  boxShadow: "5px 4px 10px 0px rgba(0, 0, 0, 0.25), 1px 1px 0px 0px rgba(255, 255, 255, 0.25) inset",
+                  boxShadow: "1px 1px 0px 0px #8d7de0 inset, 5px 4px 10px 0px rgba(0, 0, 0, 0.25)",
                 }}
                 className="flex flex-col text-lg font-medium items-center bg-[#3B2E79] hover:bg-[#48319D] cursor-pointer rounded-full gap-y-2 py-2"
                 key={index}
               >
                 <p className="pt-2 text-[15px]">{hour.hour}</p>
                 <div className="flex flex-col items-center">
-                    <img src={cloud} width={40} alt="" />
-                    <p className="text-blue-400 text-xs">100%</p>
+                    
+                    <img className="pt-2" src={rayo} width={32} alt="" />
+                    <p className="text-[#40CBD8] text-xs">70%</p>
+
                 </div>
                 <p className="pb-2 text-xl">{hour.temp}</p>
               </div>
