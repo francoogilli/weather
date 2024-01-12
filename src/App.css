@@ -18,3 +18,7 @@ body::before {
     background: radial-gradient(73.19% 111.55% at 93.07% 74.31%, #45278B 0%, #2E335A 100%);
     z-index: -1; /* Coloca la capa antes que el contenido principal */
 }
+
+.shade{
+    box-shadow: 0px 1px 0px 0px #FFF inset, 0px 20px 100px 0px rgba(74, 57, 127, 0.70);
+}
