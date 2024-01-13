@@ -137,19 +137,19 @@ const Forecast = () => {
                 style={{
                   minWidth: "74px", // Puedes ajustar este valor según tus necesidades
                   flex: "0 0 auto", // Esto evita que los elementos se contraigan
-                  boxShadow: "1px 1px 0px 0px #8d7de0 inset, 5px 4px 10px 0px rgba(0, 0, 0, 0.25)",
+                  boxShadow: "0px 4px 10px 0px rgba(0, 0, 0, 0.08)"
                 }}
-                className="flex flex-col justify-center text-lg font-medium items-center border border-[#ffffff33] bg-[#48319D33] hover:bg-[#48319D] cursor-pointer rounded-full gap-y-2 py-2"
+                className="flex flex-col justify-center text-lg font-medium items-center  bg-[#FFFFFF4D] hover:bg-[#FFFFFFB2] cursor-pointer rounded-full gap-y-2 py-2"
                 key={index}
               >
-                <p className="pt-2 text-[15px]">{hour.hour}</p>
+                <p className="pt-2 text-[15px] text-[#303345]">{hour.hour}</p>
                 <div className="flex flex-col items-center">
                     
                     <img className="pt-2" src={rayo} width={32} alt="" />
-                    <p className="text-[#40CBD8] text-xs">70%</p>
+                    <p className="text-[#617bff] font-bold text-xs">70%</p>
 
                 </div>
-                <p className="pb-2 text-xl">{hour.temp}</p>
+                <p className="pb-2 font-bold text-xl text-[#303345]">{hour.temp}</p>
               </div>
             ))}
           </div>
