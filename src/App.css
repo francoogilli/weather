@@ -15,8 +15,11 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(73.19% 111.55% at 93.07% 74.31%, #45278B 0%, #2E335A 100%);
-    z-index: -1; /* Coloca la capa antes que el contenido principal */
+    background: conic-gradient(from 180deg at 50% 50%, rgba(97, 47, 171, 0.00) 50.017388463020325deg, #612FAB 129.55134987831116deg, rgba(97, 47, 171, 0.00) 226.05700492858887deg, #612FAB 269.28977251052856deg);
+    filter: blur(100px);
+
+
+    z-index: -1; /*45278B Coloca la capa antes que el contenido principal */
 }
 
 .shade{

@@ -137,10 +137,9 @@ const Forecast = () => {
                 style={{
                   minWidth: "74px", // Puedes ajustar este valor según tus necesidades
                   flex: "0 0 auto", // Esto evita que los elementos se contraigan
-                  border: "1px solid rgba(255, 255, 255, 0.20)",
                   boxShadow: "1px 1px 0px 0px #8d7de0 inset, 5px 4px 10px 0px rgba(0, 0, 0, 0.25)",
                 }}
-                className="flex flex-col text-lg font-medium items-center bg-[#3B2E79] hover:bg-[#48319D] cursor-pointer rounded-full gap-y-2 py-2"
+                className="flex flex-col justify-center text-lg font-medium items-center border border-[#ffffff33] bg-[#48319D33] hover:bg-[#48319D] cursor-pointer rounded-full gap-y-2 py-2"
                 key={index}
               >
                 <p className="pt-2 text-[15px]">{hour.hour}</p>
