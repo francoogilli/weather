@@ -4,7 +4,7 @@ import SectionContainer from "./SectionContainer";
 const Temp = () => {
     return (
         <SectionContainer className="flex flex-col pt-7 items-center text-white ">
-            <p className="text-[#313341] text-3xl sm:text-4xl font-bold pb-14">Islamabad, <span className="text-2xl font-medium">Pakistan</span></p>
+            <p className="text-[#313341] text-3xl sm:text-4xl font-bold pb-14">Stockholm, <span className="text-2xl font-medium">Sweden</span></p>
             <img src={weather} width={260} className="drop-shadow-2xl"  alt="" />
             <p className="text-[#282b3a] text-6xl font-bold">36.9°</p>
             <p className="text-[#303345] font-medium text-xl sm:text-2xl">Sunny</p>
