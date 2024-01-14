@@ -22,19 +22,19 @@ const Search = () => {
   };
 
   return (
-    <SectionContainer id="search" className={' mt-5'}>
+    <SectionContainer id="search" className={'mt-5'}>
       <form className="flex justify-center ">
-        <div className="flex relative p-1 border border-white/5 rounded-full w-3/4 sm:w-1/3">
+        <div className="flex  relative p-1 border border-white/5 rounded-full w-full sm:w-1/3">
           <input
-            className='flex-1 p-2 pl-4 bg-black/20 text-white rounded-full w-full'
+            className='flex-1 p-2 pl-4 bg-white/20 focus:outline-none placeholder:text-zinc-500 text-zinc-700 font-bold  rounded-full w-full'
             placeholder='Type your place'
             value={searchTerm}
             onChange={handleInputChange}
           />
           {suggestions.length > 0 && (
-            <ul className="absolute z-10 left-0 right-0 mt-[3.3rem] p-1 bg-zinc-900 border rounded-3xl border-zinc-800  shadow-3xl">
+            <ul className="absolute z-10 left-0 right-0 mt-[3.3rem] p-1 backdrop-blur-xl border rounded-3xl border-white/30  shadow-3xl">
               {suggestions.map(city => (
-                <li key={city.id} className="p-3 text-base  font-medium text-white cursor-pointer hover:bg-[#1e1e21]  rounded-xl">
+                <li key={city.id} className="p-3 text-base  font-medium text-white cursor-pointer hover:bg-white/10  rounded-[19px]">
                   {city.name}, {city.country}
                 </li>
               ))}

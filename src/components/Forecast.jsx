@@ -142,7 +142,7 @@ const Forecast = () => {
                 className="flex flex-col justify-center text-lg font-medium items-center  bg-[#FFFFFF4D] hover:bg-[#FFFFFFB2] cursor-pointer rounded-full gap-y-2 py-2"
                 key={index}
               >
-                <p className="pt-2 text-[15px] text-[#303345]">{hour.hour}</p>
+                <p className="pt-2 text-[15px] font-semibold text-[#303345]">{hour.hour}</p>
                 <div className="flex flex-col items-center">
                     
                     <img className="pt-2" src={rayo} width={32} alt="" />
