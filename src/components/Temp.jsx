@@ -1,8 +1,8 @@
 import React from "react";
-import weather from "../../public/rayo.png";
+
 import SectionContainer from "./SectionContainer";
 const Temp = ({ temp, conditions, resolvedAdress, icon }) => {
-    const iconPath = `../../public/icons/${icon}.png`;
+    const iconPath = `/icons/${icon}.png`;
     console.log(iconPath);
     return (
         <SectionContainer className="flex flex-col pt-7 items-center text-white ">
