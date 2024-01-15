@@ -1,7 +1,7 @@
 import React from "react";
 import SectionContainer from "./SectionContainer";
-import cloud from "../assets/cloud.png";
-import rayo from "../assets/rayo.png";
+import cloud from "../assets/icons/rayo.png";
+import rayo from "../assets/icons/rayo.png";
 
 
 const Hours={
