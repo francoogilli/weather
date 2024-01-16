@@ -28,7 +28,7 @@ const Forecast = ({ hourlyForecast }) => {
         <div className="flex flex-col items-center">
           <img className="pt-2" src={`/icons/${hourData.icon}.png`} width={32} alt="" />
           {hourData.precipprob > 0 && (
-          <p className="text-[#617bff] font-bold text-xs">{Math.floor(hourData.precipprob)}%</p>
+          <p className="text-[#617bff] font-bold text-xs">{Math.floor(hourData.precipprob / 10) * 10}%</p>
         )}
         {hourData.precipprob === 0 && (
           <p className="text-[#617bff] font-bold text-xs invisible">0%</p>
