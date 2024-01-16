@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 body {
-    background: linear-gradient(120deg, #FEE3BC 23.22%, #F39876 99.52%);
+    background: linear-gradient(120deg, #1B262C 23.22%, #24353E 99.52%);
     font-family: 'Manrope', sans-serif;
     position: relative;
     margin: 0;
@@ -15,10 +15,11 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(./assets/bg.png);
-    fill: linear-gradient(180deg, #FEB054 0%, #FEA14E 100%);
-    box-shadow: 0px 0px 95px 0px #FF7E36 inset, -51px -37px 60px 0px rgba(193, 93, 0, 0.50) inset;
-    filter: drop-shadow(0px 0px 100px #FF7E36) blur(50px);
+    background-image: url(./assets/Ellipse2.png);
+    background-size: cover;
+    fill: linear-gradient(180deg, #24353E 0%, #24353E 100%);
+    box-shadow: 0px 0px 95px 0px #24353E inset, -51px -37px 60px 0px rgba(42, 61, 71, 0.5) inset;
+    filter: drop-shadow(0px 0px 100px #24353E) blur(50px);
     z-index: -1; /*45278B Coloca la capa antes que el contenido principal */
 }
 
