@@ -13,14 +13,14 @@ const Search = () => {
   const suggestionsRef = useRef(null);
   const [hourlyForecast, setHourlyForecast] = useState([]);
   const [weatherData, setWeatherData] = useState({
-    temp: 33.1, 
-    conditions: "Sunny", 
+    temp: 24, 
+    conditions: "Rain", 
     resolvedAdress: "Miramar, Argentina", 
-    icon: "thunder",
-    uvindex: 7,
-    humidity: 90,
-    visibility: 8,
-    feelslike: 19
+    icon: "thunder-rain",
+    uvindex: 4,
+    humidity: 87,
+    visibility: 7,
+    feelslike: 23
   });
 
   const lowerCaseSearchTerm = searchTerm.toLowerCase();
