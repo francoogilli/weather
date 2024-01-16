@@ -27,7 +27,12 @@ const Forecast = ({ hourlyForecast }) => {
         <p className="pt-2 text-[15px] font-semibold text-white">{formatHour(hourData.datetime)}</p>
         <div className="flex flex-col items-center">
           <img className="pt-2" src={`/icons/${hourData.icon}.png`} width={32} alt="" />
+          {hourData.precipprob > 0 && (
           <p className="text-[#617bff] font-bold text-xs">{Math.floor(hourData.precipprob)}%</p>
+        )}
+        {hourData.precipprob === 0 && (
+          <p className="text-[#617bff] font-bold text-xs invisible">0%</p>
+        )}
         </div>
         <p className="pb-2 font-bold text-xl text-white">{Math.floor(hourData.temp)}º</p>
       </div>
