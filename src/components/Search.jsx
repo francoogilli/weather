@@ -11,6 +11,7 @@ const Search = () => {
   const [selectedCity, setSelectedCity] = useState(null);
   const [loading, setLoading] = useState(false);
   const suggestionsRef = useRef(null);
+  const [hourlyForecast, setHourlyForecast] = useState([]);
   const [weatherData, setWeatherData] = useState({
     temp: 33.1, 
     conditions: "Sunny", 
@@ -59,6 +60,8 @@ const Search = () => {
     try {
       setLoading(true);
       const response = await axios.get(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city.name}, ${city.country}?unitGroup=metric&key=NWP5A5DETM2C6BV4R9ZZR6FFT`);
+      const first24Hours = response.data.days[0].hours.slice(0, 24);
+      setHourlyForecast(first24Hours);
       setWeatherData({
         temp: response.data.days[0].temp,
         conditions: response.data.days[0].conditions,
@@ -75,7 +78,7 @@ const Search = () => {
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [setHourlyForecast]);
   
 
   useEffect(() => {
@@ -119,7 +122,7 @@ const Search = () => {
         icon={weatherData.icon}
       />
 
-      <Forecast/>
+      <Forecast hourlyForecast={hourlyForecast}/>
       <DataMain
         uvindex={weatherData.uvindex}
         humidity={weatherData.humidity}

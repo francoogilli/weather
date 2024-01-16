@@ -4,157 +4,42 @@ import cloud from "../assets/icons/rayo.png";
 import rayo from "../assets/icons/rayo.png";
 
 
-const Hours={
-    zero:{
-        hour:"12 AM",
-        temp:"21º",
-        icon:(<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-cloud-storm" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 18a4.6 4.4 0 0 1 0 -9a5 4.5 0 0 1 11 2h1a3.5 3.5 0 0 1 0 7h-1" /><path d="M13 14l-2 4l3 0l-2 4" /></svg>),
-    },
-    one:{
-        hour:"1 AM",
-        temp:"20º",
-        icon:(<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sun" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /><path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" /></svg>)
-    },
-    two:{
-        hour:"2 AM",
-        temp:"18º",
-        icon:(<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" /></svg>)
-    },
-    three:{
-        hour:"3 AM",
-        temp:"18º",
-        icon:(<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" /></svg>)
-    },
-    four:{
-        hour:"4 AM",
-        temp:"17º",
-        icon:(<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" /></svg>)
-    },
-    five:{
-        hour:"5 AM",
-        temp:"16º",
-        icon:(<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" /></svg>)
-    },
-    six:{
-        hour:"6 AM",
-        temp:"16º",
-        icon:(<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" /></svg>)
-    },
-    seven:{
-        hour:"7 AM",
-        temp:"16º",
-        icon:(<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" /></svg>)
-    },
-    eight:{
-        hour:"8 AM",
-        temp:"17º",
-        icon:(<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" /></svg>)
-    },
-    nine:{
-        hour:"9 AM",
-        temp:"18º",
-        icon:(<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" /></svg>)
-    },
-    ten:{
-        hour:"10 AM",
-        temp:"19º",
-        icon:(<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" /></svg>)
-    },
-    eleven:{
-        hour:"11 AM",
-        temp:"20º",
-        icon:(<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" /></svg>)
-    },
-    twelve:{
-        hour:"12 PM",
-        temp:"21º",
-        icon:(<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" /></svg>)
-    },
-    thirteen:{
-        hour:"1 PM",
-        temp:"22º",
-        icon:(<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" /></svg>)
-    },
-    fourteen:{
-        hour:"2 PM",
-        temp:"23º",
-        icon:(<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" /></svg>)
-    },
-    fifteen:{
-        hour:"3 PM",
-        temp:"24º",
-        icon:(<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" /></svg>)
-    },
-    sixteen:{
-        hour:"4 PM",
-        temp:"25º",
-        icon:(<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" /></svg>)
-    },
-    seventeen:{
-        hour:"5 PM",
-        temp:"26º",
-        icon:(<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" /></svg>)
-    },
-    eighteen:{
-        hour:"6 PM",
-        temp:"27º",
-        icon:(<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" /></svg>)
-    },
-    nineteen:{
-        hour:"7 PM",
-        temp:"26º",
-        icon:(<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" /></svg>)
-    },
-    twenty:{
-        hour:"8 PM",
-        temp:"25º",
-        icon:(<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" /></svg>)
-    },
-    twentyOne:{
-        hour:"9 PM",
-        temp:"23º",
-        icon:(<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" /></svg>)
-    },
-    twentyTwo:{
-        hour:"10 PM",
-        temp:"21º",
-        icon:(<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" /></svg>)
-    },
-    twentyThree:{
-        hour:"11 PM",
-        temp:"20º",
-        icon:(<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" /></svg>)
-    }
-}
-const Forecast = () => {
-    const hoursArray = Object.values(Hours);
+const formatHour = (hour) => {
+    const formattedHour = new Date(`2000-01-01T${hour}`).toLocaleString('en-US', {
+      hour: 'numeric',
+      hour12: true
+    });
+    return formattedHour;
+  };
+  
+const Forecast = ({ hourlyForecast }) => {
+    
+    const hoursArray = hourlyForecast.map((hourData, index) => (
+      <div
+        key={index}
+        style={{
+          minWidth: "74px",
+          flex: "0 0 auto",
+          boxShadow: "0px 4px 10px 0px rgba(0, 0, 0, 0.08)"
+        }}
+        className="flex flex-col justify-center text-lg font-medium items-center border border-[#ffffff10]  bg-[#3b545c38] hover:bg-[#9fb1b738] cursor-pointer rounded-full gap-y-2 py-2"
+      >
+        <p className="pt-2 text-[15px] font-semibold text-white">{formatHour(hourData.datetime)}</p>
+        <div className="flex flex-col items-center">
+          <img className="pt-2" src={`/icons/${hourData.icon}.png`} width={32} alt="" />
+          <p className="text-[#617bff] font-bold text-xs">{Math.floor(hourData.precipprob)}%</p>
+        </div>
+        <p className="pb-2 font-bold text-xl text-white">{Math.floor(hourData.temp)}º</p>
+      </div>
+    ));
   
     return (
-        <SectionContainer className={'font-base text-base text-white pt-8 pb-0 overflow-auto'}>
-          <div className="flex gap-3 overflow-x-auto pb-5">
-            {hoursArray.map((hour, index) => (
-              <div
-                style={{
-                  minWidth: "74px", // Puedes ajustar este valor según tus necesidades
-                  flex: "0 0 auto", // Esto evita que los elementos se contraigan
-                  boxShadow: "0px 4px 10px 0px rgba(0, 0, 0, 0.08)"
-                }}
-                className="flex flex-col justify-center text-lg font-medium items-center border border-[#ffffff10]  bg-[#3b545c38] hover:bg-[#9fb1b738] cursor-pointer rounded-full gap-y-2 py-2"
-                key={index}
-              >
-                <p className="pt-2 text-[15px] font-semibold text-white">{hour.hour}</p>
-                <div className="flex flex-col items-center">
-                    
-                    <img className="pt-2" src={rayo} width={32} alt="" />
-                    <p className="text-[#617bff] font-bold text-xs">70%</p>
-
-                </div>
-                <p className="pb-2 font-bold text-xl text-white">{hour.temp}</p>
-              </div>
-            ))}
-          </div>
-        </SectionContainer>
-      );
-    };
-    
-    export default Forecast;
+      <SectionContainer className={'font-base text-base text-white pt-8 pb-0 overflow-auto'}>
+        <div className="flex gap-3 overflow-x-auto pb-5">
+          {hoursArray}
+        </div>
+      </SectionContainer>
+    );
+  };
+  
+  export default Forecast;
