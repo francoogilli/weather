@@ -5,6 +5,7 @@ import axios from 'axios';
 import Temp from './Temp';
 import DataMain from './DataMain';
 import Forecast from './Forecast';
+import DailyForecast from "./DailyForecast";
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [showSuggestions, setShowSuggestions] = useState(false);
@@ -12,6 +13,8 @@ const Search = () => {
   const [loading, setLoading] = useState(false);
   const suggestionsRef = useRef(null);
   const [hourlyForecast, setHourlyForecast] = useState([]);
+  const [dailyForecast, setDailyForecast] = useState([]);
+  const [activeTab, setActiveTab] = useState('forecast');
   const [weatherData, setWeatherData] = useState({
     temp: 24, 
     conditions: "Rain", 
@@ -62,6 +65,8 @@ const Search = () => {
       const response = await axios.get(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city.name}, ${city.country}?unitGroup=metric&key=NWP5A5DETM2C6BV4R9ZZR6FFT`);
       const first24Hours = response.data.days[0].hours.slice(0, 24);
       setHourlyForecast(first24Hours);
+      const last14Days = response.data.days.slice(0, 15);
+      setDailyForecast(last14Days); // Cambiado a last14Days
       setWeatherData({
         temp: response.data.days[0].temp,
         conditions: response.data.days[0].conditions,
@@ -78,7 +83,7 @@ const Search = () => {
     } finally {
       setLoading(false);
     }
-  }, [setHourlyForecast]);
+  }, [setHourlyForecast], [setDailyForecast]);
   
 
   useEffect(() => {
@@ -86,6 +91,9 @@ const Search = () => {
       document.removeEventListener('click', handleClickOutside);
     };
   }, [handleClickOutside]);
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
+  };
 
   return (
     <SectionContainer id="search" className={'mt-5'}>
@@ -121,8 +129,23 @@ const Search = () => {
         resolvedAdress={weatherData.resolvedAdress}
         icon={weatherData.icon}
       />
-
-      <Forecast hourlyForecast={hourlyForecast}/>
+      <div className="flex justify-center mb-4 mt-8 sm:mt-1">
+        <button
+          className={`mr-2 px-4 py-2 rounded-full font-bold ${activeTab === 'forecast' ? ' text-[#ffffffd6]' : 'text-[#ffffff52]'}`}
+          onClick={() => handleTabChange('forecast')}
+        >
+          Hourly Forecast
+        </button>
+        <button
+          className={`px-4 py-2 rounded-full font-bold ${activeTab === 'dailyForecast' ? ' text-[#ffffffd6]' : 'text-[#ffffff52]'}`}
+          onClick={() => handleTabChange('dailyForecast')}
+        >
+          Weekly Forecast
+        </button>
+      </div>
+      {activeTab === 'forecast' && <Forecast hourlyForecast={hourlyForecast} />}
+      {activeTab === 'dailyForecast' && <DailyForecast dailyForecast={dailyForecast} />}
+      
       <DataMain
         uvindex={weatherData.uvindex}
         humidity={weatherData.humidity}
