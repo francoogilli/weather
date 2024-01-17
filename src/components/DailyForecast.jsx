@@ -32,7 +32,7 @@ const DailyForecast = ({ dailyForecast }) => {
     >
       <p className="pt-2 text-[14px] font-extrabold text-white uppercase">{formatDay(dayData.datetime)}</p>
       <div className="flex flex-col items-center">
-        <img className="pt-2" loading="lazy" src={`/icons/${dayData.icon}.png`} width={32} alt="" />
+        <img className="pt-2" loading="lazy" src={`/icons/${dayData.icon}.webp`} width={32} alt="" />
         {dayData.precipprob > 40 && (
           <p className="text-[#617bff] font-bold text-xs">{Math.floor(dayData.precipprob / 10) * 10}%</p>
         )}

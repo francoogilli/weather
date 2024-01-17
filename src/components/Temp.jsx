@@ -2,7 +2,7 @@ import React from "react";
 
 import SectionContainer from "./SectionContainer";
 const Temp = ({ temp, conditions, resolvedAdress, icon }) => {
-    const iconPath = `/icons/${icon}.png`;
+    const iconPath = `/icons/${icon}.webp`;
     return (
         <SectionContainer className="flex flex-col pt-7 items-center text-white ">
             <p className="text-white text-3xl sm:text-[3.35rem] font-extrabold pb-7 sm:pb-10 text-center">{resolvedAdress}</p>
