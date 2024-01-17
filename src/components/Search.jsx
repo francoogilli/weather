@@ -129,20 +129,36 @@ const Search = () => {
         resolvedAdress={weatherData.resolvedAdress}
         icon={weatherData.icon}
       />
-      <div className="flex justify-center mb-4 mt-8 sm:mt-1">
+      <div className="flex flex-col items-center justify-center mb-0 mt-8 sm:mt-1">
+        <div>
         <button
-          className={`mr-2 px-4 py-2 rounded-full font-bold ${activeTab === 'forecast' ? ' text-[#ffffffd6]' : 'text-[#ffffff52]'}`}
+          className={`mr-2 px-[2.7rem] rounded-full text-[15px] font-bold ${activeTab === 'forecast' ? ' text-[#ffffffc4]' : 'text-[#ebebf599]'}`}
           onClick={() => handleTabChange('forecast')}
         >
           Hourly Forecast
         </button>
         <button
-          className={`px-4 py-2 rounded-full font-bold ${activeTab === 'dailyForecast' ? ' text-[#ffffffd6]' : 'text-[#ffffff52]'}`}
+          className={`px-[2.7rem] rounded-full text-[15px] font-bold ${activeTab === 'dailyForecast' ? ' text-[#ffffffc4]' : 'text-[#ebebf599]'}`}
           onClick={() => handleTabChange('dailyForecast')}
         >
           Weekly Forecast
         </button>
+        </div>
+        <div className='w-[390px] left-0 top-[2px] h-[4px] relative'>
+            <img
+              className='w-[390px] left-0 top-[2px] object-cover h-[2px] absolute '
+              src="../public/separator.svg"
+              alt=""
+            />
+            <img
+              className={`top-0 h-[3px] absolute w-[390px]  ${activeTab === 'forecast' ? 'left-0' : 'left-[215px]'}`}
+              src="../public/underline.svg"
+              alt=""
+            />
+          </div>
       </div>
+
+      
       {activeTab === 'forecast' && <Forecast hourlyForecast={hourlyForecast} />}
       {activeTab === 'dailyForecast' && <DailyForecast dailyForecast={dailyForecast} />}
       

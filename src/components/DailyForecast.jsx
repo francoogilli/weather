@@ -45,7 +45,7 @@ const DailyForecast = ({ dailyForecast }) => {
   ));
 
   return (
-    <SectionContainer className={'font-base text-base text-white pt-8 pb-0 overflow-auto'}>
+    <SectionContainer className={'font-base text-base text-white pt-5 pb-0 overflow-auto'}>
       <div className="flex gap-3 overflow-x-auto pb-5">
         {daysArray}
       </div>
