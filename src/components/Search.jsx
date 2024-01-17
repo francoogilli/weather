@@ -130,18 +130,18 @@ const Search = () => {
         icon={weatherData.icon}
       />
       <div className="flex flex-col items-center justify-center mb-0 mt-8 sm:mt-1">
-        <div>
+        <div className='flex justify-around gap-x-44'>
         <button
-          className={`mr-2 px-[2.7rem] rounded-full text-[15px] font-bold ${activeTab === 'forecast' ? ' text-[#ffffffc4]' : 'text-[#ebebf599]'}`}
+          className={` rounded-full text-base font-extrabold ${activeTab === 'forecast' ? ' text-[#ffffffc4]' : 'text-[#ebebf599]'}`}
           onClick={() => handleTabChange('forecast')}
         >
-          Hourly Forecast
+          Hourly
         </button>
         <button
-          className={`px-[2.7rem] rounded-full text-[15px] font-bold ${activeTab === 'dailyForecast' ? ' text-[#ffffffc4]' : 'text-[#ebebf599]'}`}
+          className={` rounded-full text-base font-extrabold ${activeTab === 'dailyForecast' ? ' text-[#ffffffc4]' : 'text-[#ebebf599]'}`}
           onClick={() => handleTabChange('dailyForecast')}
         >
-          Weekly Forecast
+          Weekly
         </button>
         </div>
         <div className='w-[390px] left-0 top-[2px] h-[4px] relative'>
