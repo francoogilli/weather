@@ -77,7 +77,6 @@ const Search = () => {
         visibility: response.data.days[0].visibility,
         feelslike: response.data.days[0].feelslike
       });
-      console.log(response.data);
     } catch (error) {
       console.error('Error fetching weather data:', error);
     } finally {

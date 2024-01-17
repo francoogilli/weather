@@ -30,13 +30,13 @@ const DailyForecast = ({ dailyForecast }) => {
       }}
       className="flex flex-col justify-center text-lg font-medium items-center border border-[#ffffff10] bg-[#3b545c38] hover:bg-[#9fb1b738] cursor-pointer rounded-full gap-y-2 py-2"
     >
-      <p className="pt-2 text-[14px] font-semibold text-white uppercase">{formatDay(dayData.datetime)}</p>
+      <p className="pt-2 text-[14px] font-extrabold text-white uppercase">{formatDay(dayData.datetime)}</p>
       <div className="flex flex-col items-center">
-        <img className="pt-2" src={`/icons/${dayData.icon}.png`} width={32} alt="" />
-        {dayData.precipprob > 0 && (
+        <img className="pt-2" loading="lazy" src={`/icons/${dayData.icon}.png`} width={32} alt="" />
+        {dayData.precipprob > 40 && (
           <p className="text-[#617bff] font-bold text-xs">{Math.floor(dayData.precipprob / 10) * 10}%</p>
         )}
-        {dayData.precipprob === 0 && (
+        {dayData.precipprob <= 40 && (
           <p className="text-[#617bff] font-bold text-xs invisible">0%</p>
         )}
       </div>

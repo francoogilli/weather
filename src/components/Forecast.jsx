@@ -24,9 +24,9 @@ const Forecast = ({ hourlyForecast }) => {
         }}
         className="flex flex-col justify-center text-lg font-medium items-center border border-[#ffffff10]  bg-[#3b545c38] hover:bg-[#9fb1b738] cursor-pointer rounded-full gap-y-2 py-2"
       >
-        <p className="pt-2 text-[15px] font-semibold text-white">{formatHour(hourData.datetime)}</p>
+        <p className="pt-2 text-[15px] font-extrabold text-white">{formatHour(hourData.datetime)}</p>
         <div className="flex flex-col items-center">
-          <img className="pt-2" src={`/icons/${hourData.icon}.png`} width={32} alt="" />
+          <img className="pt-2" loading="lazy" src={`/icons/${hourData.icon}.png`} width={32} alt="" />
           {hourData.precipprob > 0 && (
           <p className="text-[#617bff] font-bold text-xs">{Math.floor(hourData.precipprob / 10) * 10}%</p>
         )}
