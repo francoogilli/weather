@@ -144,7 +144,7 @@ const Search = () => {
           Weekly
         </button>
         </div>
-        <div className='w-[390px] left-0 top-[2px] h-[4px] relative'>
+        <div className='w-[390px] left-0 top-[2px] h-[4px] relative overflow-hidden'>
             <img
               className='w-[390px] left-0 top-[2px] object-cover h-[2px] absolute '
               src="/icons/separator.svg"
