@@ -147,12 +147,12 @@ const Search = () => {
         <div className='w-[390px] left-0 top-[2px] h-[4px] relative'>
             <img
               className='w-[390px] left-0 top-[2px] object-cover h-[2px] absolute '
-              src="../public/separator.svg"
+              src="/icons/separator.svg"
               alt=""
             />
             <img
               className={`top-0 h-[3px] absolute w-[390px]  ${activeTab === 'forecast' ? 'left-0' : 'left-[215px]'}`}
-              src="../public/underline.svg"
+              src="/icons/underline.svg"
               alt=""
             />
           </div>
