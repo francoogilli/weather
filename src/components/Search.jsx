@@ -60,7 +60,7 @@ const Search = () => {
 
   const handleSuggestionClick = useCallback(async (city) => {
     setSelectedCity(city);
-    setSearchTerm(`${city.name}, ${city.country}`);
+    setSearchTerm('');
     setShowSuggestions(false);
 
     try {
