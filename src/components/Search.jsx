@@ -5,12 +5,15 @@ import axios from 'axios';
 import Temp from './Temp';
 import DataMain from './DataMain';
 import Forecast from './Forecast';
+import Loader from './Loader';
 import DailyForecast from "./DailyForecast";
+
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [selectedCity, setSelectedCity] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [isDataLoading, setIsDataLoading] = useState(false);
   const suggestionsRef = useRef(null);
   const [hourlyForecast, setHourlyForecast] = useState([]);
   const [dailyForecast, setDailyForecast] = useState([]);
@@ -59,9 +62,9 @@ const Search = () => {
     setSelectedCity(city);
     setSearchTerm(`${city.name}, ${city.country}`);
     setShowSuggestions(false);
-  
+
     try {
-      setLoading(true);
+      setIsDataLoading(true);
       const response = await axios.get(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city.name}, ${city.country}?unitGroup=metric&key=NWP5A5DETM2C6BV4R9ZZR6FFT`);
       const first24Hours = response.data.days[0].hours.slice(0, 24);
       setHourlyForecast(first24Hours);
@@ -80,16 +83,16 @@ const Search = () => {
     } catch (error) {
       console.error('Error fetching weather data:', error);
     } finally {
-      setLoading(false);
+      setIsDataLoading(false);
     }
-  }, [setHourlyForecast], [setDailyForecast]);
-  
+  }, [setHourlyForecast, setDailyForecast]);
 
   useEffect(() => {
     return () => {
       document.removeEventListener('click', handleClickOutside);
     };
   }, [handleClickOutside]);
+
   const handleTabChange = (tab) => {
     setActiveTab(tab);
   };
@@ -120,54 +123,59 @@ const Search = () => {
           )}
         </div>
       </form>
-      
-      
-      <Temp
-        temp={weatherData.temp}
-        conditions={weatherData.conditions}
-        resolvedAdress={weatherData.resolvedAdress}
-        icon={weatherData.icon}
-      />
-      <div className="flex flex-col items-center justify-center mb-0 mt-8 sm:mt-1">
-        <div className='flex justify-around gap-x-44'>
-        <button
-          className={` rounded-full text-base font-extrabold ${activeTab === 'forecast' ? ' text-[#ffffffc4]' : 'text-[#ebebf599]'}`}
-          onClick={() => handleTabChange('forecast')}
-        >
-          Hourly
-        </button>
-        <button
-          className={` rounded-full text-base font-extrabold ${activeTab === 'dailyForecast' ? ' text-[#ffffffc4]' : 'text-[#ebebf599]'}`}
-          onClick={() => handleTabChange('dailyForecast')}
-        >
-          Weekly
-        </button>
-        </div>
-        <div className='w-[390px] left-0 top-[2px] h-[4px] relative overflow-hidden'>
-            <img
-              className='w-[390px] left-0 top-[2px] object-cover h-[2px] absolute '
-              src="/icons/separator.svg"
-              alt=""
-            />
-            <img
-              className={`top-0 h-[3px] absolute w-[390px]  ${activeTab === 'forecast' ? 'left-0' : 'left-[215px]'}`}
-              src="/icons/underline.svg"
-              alt=""
-            />
-          </div>
-      </div>
 
-      
-      {activeTab === 'forecast' && <Forecast hourlyForecast={hourlyForecast} />}
-      {activeTab === 'dailyForecast' && <DailyForecast dailyForecast={dailyForecast} />}
-      
-      <DataMain
-        uvindex={weatherData.uvindex}
-        humidity={weatherData.humidity}
-        visibility={weatherData.visibility}
-        feelslike={weatherData.feelslike}
-      />
-    
+      {isDataLoading ? (
+        <Loader/>
+      ) : (
+        <>
+          <Temp
+            temp={weatherData.temp}
+            conditions={weatherData.conditions}
+            resolvedAdress={weatherData.resolvedAdress}
+            icon={weatherData.icon}
+          />
+
+          <div className="flex flex-col items-center justify-center mb-0 mt-8 sm:mt-1">
+            <div className='flex justify-around gap-x-44'>
+              <button
+                className={` rounded-full text-base font-extrabold ${activeTab === 'forecast' ? ' text-[#ffffffc4]' : 'text-[#ebebf599]'}`}
+                onClick={() => handleTabChange('forecast')}
+              >
+                Hourly
+              </button>
+              <button
+                className={` rounded-full text-base font-extrabold ${activeTab === 'dailyForecast' ? ' text-[#ffffffc4]' : 'text-[#ebebf599]'}`}
+                onClick={() => handleTabChange('dailyForecast')}
+              >
+                Weekly
+              </button>
+            </div>
+            <div className='w-[390px] left-0 top-[2px] h-[4px] relative overflow-hidden'>
+              <img
+                className='w-[390px] left-0 top-[2px] object-cover h-[2px] absolute '
+                src="/icons/separator.svg"
+                alt=""
+              />
+              <img
+                className={`top-0 h-[3px] absolute w-[390px]  ${activeTab === 'forecast' ? 'left-0' : 'left-[215px]'}`}
+                src="/icons/underline.svg"
+                alt=""
+              />
+            </div>
+          </div>
+
+          {activeTab === 'forecast' && <Forecast hourlyForecast={hourlyForecast} />}
+          {activeTab === 'dailyForecast' && <DailyForecast dailyForecast={dailyForecast} />}
+
+          <DataMain
+            uvindex={weatherData.uvindex}
+            humidity={weatherData.humidity}
+            visibility={weatherData.visibility}
+            feelslike={weatherData.feelslike}
+          />
+          
+        </>
+      )}
     </SectionContainer>
   );
 };
