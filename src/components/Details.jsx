@@ -27,12 +27,12 @@ const Details = ({sunrise, sunset, wind,winddir, pressure, snow, snowdepth}) => 
       <div  className='flex flex-col gap-y-4 bg-[#3b545c38] items-start border border-[#ffffff19] shadow-2xl rounded-3xl px-5 sm:px-9 py-5 '>
         <p className='flex items-center font-extrabold gap-x-1 text-sm text-[#ffffffb9]'><Wind/>WIND</p>
         <p className='text-white font-extrabold text-4xl sm:text-5xl '>{Math.floor(wind)} <span className='text-2xl sm:text-3xl'>km/h</span></p>
-        <p className='text-sm font-normal text-white text-left'>The direction is {convertDir(winddir)}.</p>
+        <p className='text-sm font-normal text-white text-left text-pretty'>The direction is from {convertDir(winddir)}.</p>
       </div>
 
       <div  className='flex flex-col gap-y-4 bg-[#3b545c38] items-start border border-[#ffffff19] shadow-2xl rounded-3xl px-5 sm:px-10 py-5 '>
         <p className='flex items-center font-extrabold gap-x-1 text-sm text-[#ffffffb9]'><Pressure/>PRESSURE</p>
-        <p className='text-white font-extrabold text-4xl sm:text-5xl'>{Math.floor(pressure)} <span className='text-base sm:text-3xl'>hPa</span></p>
+        <p className='text-white font-extrabold text-3xl sm:text-5xl'>{Math.floor(pressure)} <span className='text-base sm:text-3xl'>hPa</span></p>
         <p className='text-sm font-normal text-white text-left'>The pressure for the next hours.</p>
       </div>
 
