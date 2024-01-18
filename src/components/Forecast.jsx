@@ -1,8 +1,5 @@
 import React from "react";
 import SectionContainer from "./SectionContainer";
-import cloud from "../assets/icons/rayo.png";
-import rayo from "../assets/icons/rayo.png";
-
 
 const formatHour = (hour) => {
     const formattedHour = new Date(`2000-01-01T${hour}`).toLocaleString('en-US', {
