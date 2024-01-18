@@ -3,7 +3,8 @@ import SectionContainer from './SectionContainer';
 import cities from '../cities500.json';
 import axios from 'axios';
 import Temp from './Temp';
-import DataMain from './DataMain';
+import MainData from './MainData';
+import Details from './Details';
 import Forecast from './Forecast';
 import Loader from './Loader';
 import DailyForecast from "./DailyForecast";
@@ -25,8 +26,16 @@ const Search = () => {
     icon: "thunder-rain",
     uvindex: 4,
     humidity: 87,
+    dew: 23,
     visibility: 7,
-    feelslike: 23
+    feelslike: 23,
+    sunrise: "6:00",
+    sunset: "18:00",
+    wind: 10,
+    winddir:350,
+    pressure: 1000,
+    snow: 0,
+    snowdepth: 0
   });
 
   const lowerCaseSearchTerm = searchTerm.toLowerCase();
@@ -77,8 +86,16 @@ const Search = () => {
         icon: response.data.days[0].icon,
         uvindex: response.data.days[0].uvindex,
         humidity: response.data.days[0].humidity,
+        dew: response.data.days[0].dew,
         visibility: response.data.days[0].visibility,
-        feelslike: response.data.days[0].feelslike
+        feelslike: response.data.days[0].feelslike,
+        sunrise: response.data.days[0].sunrise,
+        sunset: response.data.days[0].sunset,
+        wind: response.data.days[0].windspeed,
+        winddir: response.data.days[0].winddir,
+        pressure: response.data.days[0].pressure,
+        snow: response.data.days[0].snow,
+        snowdepth: response.data.days[0].snowdepth,
       });
     } catch (error) {
       console.error('Error fetching weather data:', error);
@@ -99,11 +116,11 @@ const Search = () => {
 
   return (
     <SectionContainer id="search" className={'mt-5'}>
-      <form className="flex justify-center ">
-        <div className="flex  relative p-1 border bg-[#0000000f] border-white/5 rounded-full w-full sm:w-1/3">
+      <form className="flex justify-center sm:pb-5">
+        <div className="flex  relative p-1  border bg-[#0000001b] border-[#ffffff09] rounded-full w-full sm:w-1/3">
           <input
-            className='flex-1 p-2 pl-4 bg-[#24333C] focus:outline-none placeholder:text-white text-white font-bold  rounded-full w-full'
-            placeholder='Search your place'
+            className='flex-1 p-2 pl-4 bg-[#00000015] focus:outline-none placeholder:text-white text-white font-bold  rounded-full w-full'
+            placeholder='Search places'
             value={searchTerm}
             onClick={handleInputClick}
             onChange={handleInputChange}
@@ -167,13 +184,21 @@ const Search = () => {
           {activeTab === 'forecast' && <Forecast hourlyForecast={hourlyForecast} />}
           {activeTab === 'dailyForecast' && <DailyForecast dailyForecast={dailyForecast} />}
 
-          <DataMain
+          <MainData
             uvindex={weatherData.uvindex}
             humidity={weatherData.humidity}
+            dew={weatherData.dew}
             visibility={weatherData.visibility}
             feelslike={weatherData.feelslike}
           />
-          
+          <Details sunrise={weatherData.sunrise} 
+            sunset={weatherData.sunset} 
+            wind={weatherData.wind}
+            winddir={weatherData.winddir} 
+            pressure={weatherData.pressure} 
+            snow={weatherData.snow} 
+            snowdepth={weatherData.snowdepth}
+          />
         </>
       )}
     </SectionContainer>
