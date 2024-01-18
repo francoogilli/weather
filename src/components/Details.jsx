@@ -20,7 +20,7 @@ const Details = ({sunrise, sunset, wind,winddir, pressure, snow, snowdepth}) => 
     <SectionContainer className={'py-0 pb-32 text-center grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 font-semibold text-3xl sm:text-4xl text-white items-center justify-center'}>
       <div  className='flex flex-col gap-y-4 bg-[#3b545c38] items-start border border-[#ffffff19] shadow-2xl rounded-3xl px-5 sm:px-9 py-5 '>
         <p className='flex items-center font-extrabold gap-x-1 text-sm text-[#ffffffb9]'><Sunrise/>SUNRISE</p>
-        <p className='text-white font-extrabold text-3xl sm:text-5xl '>{formatTime(sunrise)}<span className='text-lg sm:text-3xl'> AM</span></p>
+        <p className='text-white font-extrabold text-3xl sm:text-5xl '>{formatTime(sunrise)}<span className='text-base sm:text-3xl'> AM</span></p>
         <p className='text-xs sm:text-sm font-normal text-white text-left pt-5'>Sunset: {formatTime(sunset)} AM</p>
       </div>
 

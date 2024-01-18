@@ -29,7 +29,7 @@ const Search = () => {
     dew: 23,
     visibility: 7,
     feelslike: 23,
-    sunrise: "6:00",
+    sunrise: "06:00",
     sunset: "18:00",
     wind: 10,
     winddir:350,
