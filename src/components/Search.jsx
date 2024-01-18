@@ -32,7 +32,7 @@ const Search = () => {
     sunrise: "06:00",
     sunset: "18:00",
     wind: 10,
-    winddir:350,
+    winddir:330,
     pressure: 1000,
     snow: 0,
     snowdepth: 0
